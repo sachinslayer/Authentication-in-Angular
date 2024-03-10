@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body takes the full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1; /* Allow the content to grow and fill the available space */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  
+  app-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

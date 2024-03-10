@@ -1,0 +1,66 @@
+<div class="signup-container">
+  <h1>Sign Up</h1>
+  <form #signupForm="ngForm" (ngSubmit)="userSignup()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+        minlength="3"
+      >
+      <div *ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)">
+        <div *ngIf="signupForm.controls['username'].errors?.['required']">
+          <p class="error-message">Username is required</p>
+        </div>
+        <div *ngIf="signupForm.controls['username'].errors?.['minlength']">
+          <p class="error-message">Username must be at least 3 characters</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+      >
+      <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+        <div *ngIf="signupForm.controls['email'].errors?.['required']">
+          <p class="error-message">Email is required</p>
+        </div>
+        <div *ngIf="signupForm.controls['email'].errors?.['email']">
+          <p class="error-message">Invalid email format</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        minlength="8"
+      >
+      <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+        <div *ngIf="signupForm.controls['password'].errors?.['required']">
+          <p class="error-message">Password is required</p>
+        </div>
+        <div *ngIf="signupForm.controls['password'].errors?.['minlength']">
+          <p class="error-message">Password must be at least 8 characters</p>
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+  </form>
+  <div class="login-link">
+    <p>Already have an account? <a routerLink="/login">Log In</a></p>
+  </div>
+</div>

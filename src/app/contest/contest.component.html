@@ -1,0 +1,22 @@
+
+
+
+
+<div *ngFor="let contest of contests">
+  <div class="contest-card card mb-3">
+    <div class="card-body">
+      <h2 class="contest-name card-title">{{ contest.name }}</h2>
+      <p class="entry-fee card-text">Entry Fee: {{ contest.entryFee }}</p>
+      <p class="prize-pool card-text">Prize Pool: {{ contest.prizePool }}</p>
+      <p class="prize-pool card-text">maxParticipants: {{ contest.maxParticipants }}</p>
+      <p class="participant-count card-text">
+        Participants joined: {{ contest.participantCount }}
+      </p>
+      <!-- Add other contest details as needed -->
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-primary" (click)="join()">upload & Join</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<h1 class="container">All Task</h1>
+<div class="container">
+    <ul class="task-list">
+      <li *ngFor="let task of tasks" class="task-item">
+        <div class="task-content">
+          <div class="task-title">Title: {{ task.title }}</div>
+          <div class="task-description">Description: {{ task.description }}</div>
+          <div class="task-rules">Rule: {{ task.rules }}</div>
+        </div>
+      </li>
+    </ul>
+    <div class="join-button">
+      <button (click)="join()">Join Contest</button>
+    </div>
+  </div>
+  
+  

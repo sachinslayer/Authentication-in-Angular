@@ -1,0 +1,16 @@
+<div class="content">
+    <!-- Display the latest uploaded picture at the top -->
+    <div *ngFor="let image of images.slice(0, 1)" class="latest-image-container">
+      <img [src]="image.imageData" alt="Latest Image" class="centered-image">
+      <button (click)="likeImage(image)" class="like-button">Like</button>
+      <span class="like-count">{{ image.likes }}</span>
+    </div>
+  
+    <!-- Display the remaining images below -->
+    <div *ngFor="let image of images.slice(1)">
+      <img [src]="image.imageData" alt="User Image" class="user-image">
+      <button (click)="likeImage(image)" class="like-button">Like</button>
+      <span class="like-count">{{ image.likes }}</span>
+    </div>
+  </div>
+  
